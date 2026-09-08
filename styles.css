@@ -49,7 +49,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .top-confetti { position: absolute; top: 16px; right: 22px; display: flex; gap: 8px; align-items: center; color: #f29d38; font-size: 15px; transform: rotate(12deg); }
 .top-confetti span:nth-child(2) { color: #ff747c; font-size: 9px; }
 .top-confetti span:nth-child(3) { color: #4b91ed; font-size: 20px; }
-.profile-brand { display: flex; align-items: center; justify-content: space-between; gap: 14px; }
+.profile-brand { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 14px; }
 .logo-plate { width: 185px; padding: 8px 12px; border-radius: 22px; background: rgba(255,255,255,.86); box-shadow: 0 8px 20px rgba(28, 72, 112, .08); }
 .logo-plate img { display: block; width: 100%; height: auto; }
 .hello-chip { display: flex; align-items: center; gap: 7px; padding: 8px 11px; border-radius: 999px; color: #805a13; background: #fff1b1; font-size: 12px; font-weight: 900; white-space: nowrap; transform: rotate(3deg); }
@@ -63,7 +63,7 @@ h1 em, h2 span { color: #f16f77; font-style: normal; }
 .mascot-wrap { position: absolute; right: -13px; bottom: -24px; width: 235px; height: 260px; }
 .mascot-halo { position: absolute; right: 10px; bottom: 20px; width: 203px; height: 203px; border: 2px dashed rgba(255, 183, 45, .54); border-radius: 50%; background: #ffdb6e66; }
 .mascot { position: absolute; z-index: 1; right: 13px; bottom: 0; width: 198px; height: auto; filter: drop-shadow(0 18px 12px rgba(38, 67, 91, .17)); animation: mascot-bob 4.8s ease-in-out infinite; }
-.speech-bubble { position: absolute; z-index: 2; top: 0; left: -25px; width: 164px; padding: 10px 12px; border: 2px solid #fff; border-radius: 16px 16px 16px 4px; background: #fff; box-shadow: 0 12px 25px rgba(36, 66, 93, .15); transform: rotate(-4deg); }
+.speech-bubble { position: absolute; z-index: 2; top: 0; right: 0; width: 164px; padding: 10px 12px; border: 2px solid #fff; border-radius: 16px 16px 16px 4px; background: #fff; box-shadow: 0 12px 25px rgba(36, 66, 93, .15); transform: rotate(-4deg); }
 .speech-bubble::after { content: ""; position: absolute; right: 20px; bottom: -10px; width: 18px; height: 18px; background: #fff; clip-path: polygon(0 0, 100% 0, 100% 100%); }
 .speech-bubble b, .speech-bubble span { display: block; }
 .speech-bubble b { color: #e46e75; font-family: "Baloo 2", cursive; font-size: 18px; line-height: 1; }
@@ -86,8 +86,8 @@ h1 em, h2 span { color: #f16f77; font-style: normal; }
 .icon-letter { color: #fff; background: var(--accent); font-family: Georgia, serif; font-size: 31px; font-weight: 800; line-height: 1; }
 .icon-letter::after { background: #fff; }
 .link-text { position: relative; z-index: 1; display: grid; min-width: 0; flex: 1; gap: 2px; }
-.link-text strong { overflow: hidden; color: var(--ink); font-family: "Baloo 2", cursive; font-size: 19px; font-weight: 800; line-height: 1.05; text-overflow: ellipsis; white-space: nowrap; }
-.link-text small { overflow: hidden; color: var(--ink-soft); font-size: 11px; font-weight: 800; line-height: 1.25; text-overflow: ellipsis; white-space: nowrap; }
+.link-text strong { color: var(--ink); font-family: "Baloo 2", cursive; font-size: 19px; font-weight: 800; line-height: 1.05; }
+.link-text small { color: var(--ink-soft); font-size: 11px; font-weight: 800; line-height: 1.25; }
 .link-arrow { position: relative; z-index: 1; display: grid; place-items: center; flex: 0 0 30px; width: 30px; height: 30px; color: var(--accent); border-radius: 50%; background: var(--accent-light); }
 .link-arrow svg { width: 16px; height: 16px; }
 .tag { position: absolute; right: 10px; top: 6px; z-index: 2; padding: 3px 7px; border-radius: 999px; color: #9d6b12; background: #ffdf70; font-size: 8px; letter-spacing: .07em; }
@@ -111,6 +111,22 @@ h1 em, h2 span { color: #f16f77; font-style: normal; }
 .pdf-credit strong { color: var(--ink); font-size: 11px; }
 .pdf-credit small { color: #e37853; font-size: 10px; }
 .copyright { margin: 17px 0 0; color: #8da0ae; font-size: 10px; font-weight: 700; }
+
+@media (max-width: 699px) {
+  .page-wrap { width: min(calc(100% - 20px), 560px); padding-top: 12px; }
+  .profile-card { min-height: 0; padding: 18px 16px 16px; border-radius: 28px; }
+  .profile-brand { align-items: flex-start; }
+  .logo-plate { width: min(185px, 62vw); }
+  .hello-chip { margin-left: auto; }
+  .profile-copy { max-width: none; padding-top: 24px; }
+  h1 { font-size: clamp(38px, 12vw, 54px); }
+  .intro { max-width: 300px; }
+  .mascot-wrap { position: relative; right: auto; bottom: auto; width: 100%; height: 220px; margin-top: 10px; }
+  .mascot-halo { right: calc(50% - 95px); bottom: 0; width: 190px; height: 190px; }
+  .mascot { right: calc(50% - 89px); bottom: -5px; width: 178px; }
+  .speech-bubble { top: 0; right: calc(50% - 120px); width: 175px; }
+  .section-heading { padding-top: 28px; }
+}
 
 @media (min-width: 700px) {
   .page-wrap { padding-top: 42px; }
