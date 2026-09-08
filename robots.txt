@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://colegio-majestic-link-bio.netlify.app/sitemap.xml
