@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://colegio-majestic-link-bio.netlify.app/sitemap.xml
+Sitemap: https://coruscating-croquembouche-c1119b.netlify.app/sitemap.xml
