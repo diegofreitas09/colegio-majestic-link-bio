@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://coruscating-croquembouche-c1119b.netlify.app/sitemap.xml
+Sitemap: https://link.colegiomajestic.com.br/sitemap.xml
